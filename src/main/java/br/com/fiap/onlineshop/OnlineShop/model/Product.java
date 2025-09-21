@@ -1,7 +1,9 @@
 package br.com.fiap.onlineshop.OnlineShop.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import br.com.fiap.onlineshop.OnlineShop.dto.ProductPostData;
+import br.com.fiap.onlineshop.OnlineShop.dto.ProductUpdateData;
+import jakarta.persistence.*;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -14,4 +16,46 @@ import lombok.NoArgsConstructor;
 @Entity(name = "Product")
 @Table(name = "product")
 public class Product {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "name", nullable = false, length = 120)
+    private String name;
+
+    @Column(name = "price", nullable = false, precision = 10, scale = 2)
+    private Float price;
+
+    @Column(name = "category", length = 60)
+    private String category;
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "ativo", nullable = false)
+    private Boolean ativo = true;
+
+    public Product(@Valid ProductPostData data) {
+        this.name = data.name();
+        this.price = data.price();
+    }
+
+    public void updateInfo(@Valid ProductUpdateData data) {
+        if (data == null) {
+            return;
+        }
+        if (data.name() != null) {
+            this.name = data.name();
+        }
+        if (data.price() > 0) {
+            this.price = data.price();
+        }
+        if (data.category() != null) {
+            this.category = data.category();
+        }
+        if(data.description() != null) {
+            this.description = data.description();
+        }
+    }
 }

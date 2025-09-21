@@ -19,13 +19,13 @@ public class Client {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name",nullable = false, length = 150)
+    @Column(name = "name", nullable = false, length = 150)
     private String name;
 
-    @Column(name = "documento",nullable = false, length = 20)
+    @Column(name = "documento", nullable = false, length = 30)
     private String documento;
 
-    @Column(name = "email",nullable = false, length = 100, unique = true)
+    @Column(name = "email", nullable = false, length = 150, unique = true)
     private String email;
 
     public Client(@Valid ClientPostData data) {
