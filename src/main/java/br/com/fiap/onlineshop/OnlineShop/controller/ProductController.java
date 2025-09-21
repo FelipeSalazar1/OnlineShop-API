@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/products")
 public class ProductController {
 
-    private final ProductController service;
+    private final ProductService service;
 
     public ProductController(ProductService service) {
         this.service = service;
@@ -38,7 +38,7 @@ public class ProductController {
             @RequestParam(required = false) String name,
             @RequestParam(required = false) Boolean price,
             Pageable pageable) {
-        Page<ProductGetData> result = service.find(name, email, pageable);
+        Page<ProductGetData> result = service.find(name, price, pageable);
         return ResponseEntity.ok(result);
     }
 

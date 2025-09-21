@@ -6,6 +6,8 @@ import br.com.fiap.onlineshop.OnlineShop.exception.ResourceNotFoundException;
 import br.com.fiap.onlineshop.OnlineShop.model.Product;
 import br.com.fiap.onlineshop.OnlineShop.repository.ProductRepository;
 import jakarta.transaction.Transactional;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,10 +34,12 @@ public class ProductService {
         repository.save(product);
     }
 
-    public List<Product> find() {
-        return repository.findAll();
+    public Page<ProductGetData> find(String category, Boolean ativo, Pageable pageable) {
+        if (category != null || ativo != null) {
+            return repository.findByCategotyOrAtivo(category, ativo, pageable).map(ProductGetData::new);
+        }
+        return repository.findAll(pageable).map(ProductGetData::new);
     }
-
 
     public ProductGetData findById(Long id) {
         return repository.findById(id).map(ProductGetData::new).orElseThrow(() -> new ResourceNotFoundException("Product not found with id: " + id));
