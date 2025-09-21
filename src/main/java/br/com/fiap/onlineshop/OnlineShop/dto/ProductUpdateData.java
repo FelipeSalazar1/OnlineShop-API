@@ -5,10 +5,12 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
+import java.math.BigDecimal;
+
 public record ProductUpdateData(
         String name,
         @DecimalMin(value = "0.0", inclusive = false, message = "O preço deve ser maior que 0")
-        Float price,
+        BigDecimal price,
         String category,
         String description,
         Boolean ativo
