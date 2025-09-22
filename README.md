@@ -20,8 +20,6 @@ OnlineShop-API/
         └── java/
             └── com/
                 └── onlineshop/
-                    └── api/
-                        └── ...
 
 COMO EXECUTAR
 
