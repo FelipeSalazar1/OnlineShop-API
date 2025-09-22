@@ -7,5 +7,5 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    Page<Product> findByCategotyOrAtivo(String category, Boolean ativo, Pageable pageable);
+    Page<Product> findByCategoryOrAtivo(String category, Boolean ativo, Pageable pageable);
 }

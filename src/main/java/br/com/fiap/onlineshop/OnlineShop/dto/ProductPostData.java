@@ -11,7 +11,7 @@ public record ProductPostData (
         String name,
 
         @Min(1)
-        Float price,
+        BigDecimal price,
 
         String category,
 

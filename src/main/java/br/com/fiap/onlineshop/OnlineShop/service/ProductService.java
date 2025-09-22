@@ -36,7 +36,7 @@ public class ProductService {
 
     public Page<ProductGetData> find(String category, Boolean ativo, Pageable pageable) {
         if (category != null || ativo != null) {
-            return repository.findByCategotyOrAtivo(category, ativo, pageable).map(ProductGetData::new);
+            return repository.findByCategoryOrAtivo(category, ativo, pageable).map(ProductGetData::new);
         }
         return repository.findAll(pageable).map(ProductGetData::new);
     }

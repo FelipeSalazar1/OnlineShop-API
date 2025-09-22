@@ -9,6 +9,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @EqualsAndHashCode(of = "id")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,7 +26,7 @@ public class Product {
     private String name;
 
     @Column(name = "price", nullable = false, precision = 10, scale = 2)
-    private Float price;
+    private BigDecimal price;
 
     @Column(name = "category", length = 60)
     private String category;
@@ -47,7 +49,7 @@ public class Product {
         if (data.name() != null) {
             this.name = data.name();
         }
-        if (data.price() > 0) {
+        if (data.price().compareTo(BigDecimal.ZERO) > 0) {
             this.price = data.price();
         }
         if (data.category() != null) {
@@ -66,7 +68,7 @@ public class Product {
         return name;
     }
 
-    public Float getPrice() {
+    public BigDecimal getPrice() {
         return price;
     }
 
