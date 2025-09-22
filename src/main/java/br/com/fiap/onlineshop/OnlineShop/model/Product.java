@@ -57,4 +57,28 @@ public class Product {
             this.description = data.description();
         }
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Float getPrice() {
+        return price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
 }

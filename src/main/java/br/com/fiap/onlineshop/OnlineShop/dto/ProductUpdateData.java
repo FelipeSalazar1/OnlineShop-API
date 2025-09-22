@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public record ProductUpdateData(
         String name,
         @DecimalMin(value = "0.0", inclusive = false, message = "O preço deve ser maior que 0")
-        BigDecimal price,
+        Float price,
         String category,
         String description,
         Boolean ativo
