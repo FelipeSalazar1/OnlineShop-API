@@ -34,13 +34,19 @@ src/
 ```
 🧪 Endpoints disponíveis
 ```
-Método    Rota                        Descrição
-POST      /products                    Criar novo produto
-PUT       /products/:id                Editar produto existente
-DELETE    /products/:id                Remover produto
-GET       /products?page=1&limit=10    Listar produtos com filtros e paginação
-GET       /customers                   Listar clientes
-POST      /orders                      Criar novo pedido
+# Produtos
+POST    /products                  -> Criar novo produto
+PUT     /products/{id}             -> Editar produto existente
+DELETE  /products/{id}             -> Remover produto (soft delete)
+GET     /products?page=1&size=10   -> Listar produtos com filtros e paginação
+GET     /products/{id}             -> Obter produto por ID
+
+# Clientes
+POST    /clients                   -> Criar cliente
+PUT     /clients/{id}              -> Atualizar cliente
+DELETE  /clients/{id}              -> Remover cliente
+GET     /clients?page=1&size=10    -> Listar clientes com filtros e paginação
+GET     /clients/{id}              -> Obter cliente por ID
 ```
 ```
 DB_URL=jdbc:mysql://localhost:3306/onlineshop
