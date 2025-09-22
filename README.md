@@ -9,7 +9,8 @@ TECNOLOGIAS
 
 ESTRUTURA DO PROJETO
 
-'''
+```
+
 OnlineShop-API/
 ├── .gitignore
 ├── .mvn/
@@ -21,7 +22,8 @@ OnlineShop-API/
         └── java/
             └── com/
                 └── onlineshop/
-'''
+
+```
 
 COMO EXECUTAR
 
@@ -41,3 +43,16 @@ COMO EXECUTAR
 LICENÇA
 
 Distribuído sob a licença MIT. Consulte o arquivo LICENSE para mais detalhes.
+
+
+INTEGRANTES
+
+TABELA DE NOMES
+
+| NOME              | RM |
+|----------------|----------------|
+|MARCELO VIEIRA DE MELO|RM552953|
+|FELIPE CASTRO SALAZAR|RM553464|
+|VICTOR RODRIGUES|RM554158|
+|RAYARA AMARO FIGUEIREDO|RM552635|
+|ERICK MOLINA|RM553852|
