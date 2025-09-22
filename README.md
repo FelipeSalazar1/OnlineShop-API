@@ -19,17 +19,16 @@ Este é o back-end do sistema de loja online desenvolvido com Java e Spring Boot
 src/
 ├── main/
 │   └── java/
-│       └── com/
-│           └── onlineshop/
-│               └── api/
-│                   ├── controller/
-│                   ├── service/
-│                   ├── model/
-│                   ├── repository/
-│                   └── OnlineShopApplication.java
+│       └── onlineshop/
+│           ├── controller/
+|           ├── dto/
+|           ├── exception/
+│           ├── model/
+│           ├── repository/
+│           ├── service/
+│           └── OnlineShopApplication.java
 ├── resources/
 │   ├── application.properties
-│   └── data.sql
 └── test/
 ```
 🧪 Endpoints disponíveis
@@ -50,7 +49,7 @@ GET     /clients/{id}              -> Obter cliente por ID
 ```
 ```
 DB_URL=jdbc:mysql://localhost:3306/onlineshop
-DB_USER=root
+DB_USER=usuario
 DB_PASSWORD=sua_senha
 SPRING_PROFILES_ACTIVE=dev
 ```
