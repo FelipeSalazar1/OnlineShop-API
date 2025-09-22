@@ -9,6 +9,7 @@ TECNOLOGIAS
 
 ESTRUTURA DO PROJETO
 
+'''
 OnlineShop-API/
 ├── .gitignore
 ├── .mvn/
@@ -20,6 +21,7 @@ OnlineShop-API/
         └── java/
             └── com/
                 └── onlineshop/
+'''
 
 COMO EXECUTAR
 
